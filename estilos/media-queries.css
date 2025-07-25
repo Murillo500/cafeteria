@@ -1,0 +1,231 @@
+/* estilos/media-queries.css */
+
+
+
+/* Ajustes para Telas a partir de 768px (Tablets e Desktops) */
+@media (min-width: 768px) {
+    /* --- NAVEGAÇÃO --- */
+    .menu-toggle {
+        display: none; /* Esconde o botão de menu mobile no desktop */
+    }
+
+    #galeria {
+    display: block;
+}
+
+    .nav-links {
+        display: flex; /* Garante que os links apareçam lado a lado */
+        position: static; /* Remove o posicionamento absoluto do mobile */
+        width: auto;
+        height: auto;
+        background-color: transparent;
+        flex-direction: row;
+        gap: 30px;
+        transition: none; /* Remove transições para desktop */
+        padding: 0;
+    }
+
+    .nav-links.active {
+        transform: none; /* Remove a transformação do menu mobile */
+    }
+
+    /* --- HERO SECTION --- */
+    .hero-section {
+        height: 750px; /* Aumenta a altura da hero section para mais impacto */
+    }
+
+    .hero-content h1 {
+        font-size: 5em; /* Título principal maior */
+    }
+
+    .hero-content p {
+        font-size: 1.6em; /* Subtítulo maior */
+        max-width: 800px; /* Limita a largura para melhor leitura */
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 18px 40px; /* Botões um pouco maiores */
+        font-size: 1.1em;
+    }
+
+    /* --- SEÇÃO: SOBRE NÓS --- */
+    .section-about {
+        padding: 100px 0;
+    }
+
+    .about-flex {
+        flex-direction: row; /* Alinha imagem e texto lado a lado */
+        gap: 60px;
+    }
+
+    .about-image {
+        flex: 1; /* Ocupa uma parte flexível */
+        order: 1; /* Garante que a imagem venha primeiro */
+    }
+
+    .about-text {
+        flex: 1.5; /* O texto ocupa mais espaço */
+        text-align: left;
+    }
+
+    .about-text h2 {
+        text-align: left; /* Alinha o título à esquerda */
+        font-size: 3.2em;
+    }
+
+    .about-text p {
+        font-size: 1.15em;
+    }
+
+    /* --- SEÇÃO: NOSSO MENU --- */
+    .section-menu {
+        padding: 100px 0;
+    }
+
+    .section-menu h2 {
+        font-size: 3.2em;
+    }
+
+    .menu-intro {
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: 0 auto 60px auto;
+    }
+
+    .menu-category h3 {
+        font-size: 2.5em;
+    }
+
+    .menu-items-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para menu em tablets */
+        gap: 40px;
+    }
+
+    .menu-item h4 {
+        font-size: 1.6em;
+    }
+
+    .menu-item p {
+        font-size: 1em;
+    }
+
+    .menu-item .price {
+        font-size: 1.4em;
+    }
+
+    /* --- SEÇÃO: GALERIA --- */
+    .section-gallery {
+        padding: 100px 0;
+    }
+
+    .section-gallery h2 {
+        font-size: 3.2em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas para a galeria */
+        gap: 25px;
+    }
+
+    .gallery-item {
+        height: 300px; /* Altura um pouco maior para as imagens */
+    }
+
+    /* --- SEÇÃO: CONTATO E RESERVAS --- */
+    .section-contact {
+        padding: 100px 0;
+    }
+
+    .section-contact h2 {
+        font-size: 3.2em;
+    }
+
+    .contact-flex {
+        flex-direction: row; /* Alinha infos e formulário lado a lado */
+        gap: 60px;
+        align-items: flex-start; /* Alinha pelo topo */
+    }
+
+    .contact-info, .contact-form {
+        flex: 1;
+        min-width: 400px; /* Aumenta a largura mínima para melhor visualização */
+        padding: 40px;
+    }
+
+    .contact-info h3, .contact-form h3 {
+        font-size: 2em;
+    }
+
+    .contact-info p, .contact-form p {
+        font-size: 1.1em;
+    }
+
+    .map-placeholder iframe {
+        height: 350px; /* Aumenta a altura do mapa */
+    }
+
+    /* --- FOOTER --- */
+    footer {
+        padding: 60px 0;
+    }
+
+    .footer-content {
+        flex-direction: row; /* Alinha os blocos do rodapé lado a lado */
+        justify-content: space-around;
+        text-align: left;
+    }
+
+    .footer-brand, .footer-links, .footer-contact-footer {
+        min-width: unset; /* Remove min-width para mais flexibilidade */
+        max-width: 300px; /* Limita a largura individualmente */
+    }
+
+    .footer-brand h3 {
+        font-size: 2.2em;
+    }
+
+    .footer-links h4, .footer-contact-footer h4 {
+        font-size: 1.4em;
+    }
+
+    .footer-links ul li a {
+        font-size: 1em;
+    }
+}
+
+/* Ajustes para Telas Grandes (Desktops muito largos) - a partir de 1200px */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px; /* Aumenta a largura máxima do container */
+    }
+
+    #galeria {
+    display: block;
+}
+
+    .hero-section {
+        height: 850px; /* Altura máxima para Hero Section */
+    }
+
+    .hero-content h1 {
+        font-size: 6.5em; /* Título ainda maior para telas grandes */
+    }
+
+    .hero-content p {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 3.8em; /* Títulos de seção ainda maiores */
+    }
+
+    .menu-items-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas para o menu em telas maiores */
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 colunas para a galeria */
+    }
+}

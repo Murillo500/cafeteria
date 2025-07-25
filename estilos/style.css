@@ -1,0 +1,498 @@
+/* estilos/style.css */
+
+@charset "UTF-8";
+
+/* Importação das fontes */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap');
+
+/* Variáveis CSS para a paleta de cores de cafeteria */
+:root {
+    --cor-primaria: #6F4E37; /* Marrom Café Escuro */
+    --cor-secundaria: #A57C5E; /* Marrom Café Médio */
+    --cor-terciaria: #C7AE90; /* Bege Cremoso / Leite */
+    --cor-destaque: #D48C4F; /* Laranja Torrado / Caramelo */
+    --cor-fundo-claro: #F5F0EB; /* Creme Suave */
+    --cor-texto-escuro: #333333; /* Cinza Escuro para Leitura */
+    --cor-texto-claro: #FFFFFF; /* Branco */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave para os links internos */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte para o corpo do texto */
+    line-height: 1.6;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+/* Container para centralizar conteúdo */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Títulos Globais */
+h1, h2, h3 {
+    font-family: 'Merriweather', serif; /* Fonte elegante para títulos */
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.8em;
+    color: var(--cor-texto-claro);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+/* Botões */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--cor-destaque); /* Laranja Torrado */
+    color: var(--cor-texto-claro);
+    border: 2px solid var(--cor-destaque);
+}
+
+.btn-primary:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-primaria);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--cor-primaria);
+    border: 2px solid var(--cor-primaria);
+}
+
+.btn-secondary:hover {
+    background-color: var(--cor-primaria);
+    color: var(--cor-texto-claro);
+    border-color: var(--cor-primaria);
+}
+
+/* --- NAVEGAÇÃO / CABEÇALHO --- */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo semi-transparente */
+    padding: 15px 0;
+    position: absolute; /* Para ficar em cima da hero */
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--cor-destaque); /* Laranja no hover */
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+    display: none; /* Escondido por padrão no desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    padding: 0;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--cor-texto-claro);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    height: 700px; /* Altura da hero section */
+    display: flex;
+    flex-direction: column; /* Para alinhar navegação e conteúdo */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--cor-texto-claro);
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Overlay escuro */
+        url('/imagens/ambiente-cafeteria.jpg'); /* IMAGEM DE FUNDO */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Efeito Parallax */
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+    margin-top: auto; /* Empurra o conteúdo para baixo, abaixo da navbar */
+    margin-bottom: auto; /* Centraliza verticalmente o conteúdo entre a navbar e o final da hero */
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 40px;
+}
+
+/* --- SEÇÃO: SOBRE NÓS --- */
+.section-about {
+    padding: 80px 0;
+    background-color: var(--cor-fundo-claro);
+}
+
+.about-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 2;
+    min-width: 300px;
+    text-align: left;
+}
+
+.about-text h2 {
+    text-align: left;
+    margin-top: 0;
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+/* --- SEÇÃO: NOSSO MENU --- */
+.section-menu {
+    padding: 80px 0;
+    background-color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.menu-intro {
+    font-size: 1.1em;
+    margin-bottom: 50px;
+}
+
+.menu-category {
+    margin-bottom: 60px;
+}
+
+.menu-category h3 {
+    font-size: 2.2em;
+    color: var(--cor-primaria);
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.menu-category h3::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background-color: var(--cor-destaque);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.menu-items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.menu-item {
+    background-color: var(--cor-fundo-claro);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item h4 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.5em;
+    color: var(--cor-secundaria);
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.menu-item p {
+    font-size: 0.95em;
+    color: var(--cor-texto-escuro);
+    flex-grow: 1; /* Para que o preço fique sempre na base */
+}
+
+.menu-item .price {
+    font-family: 'Merriweather', serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: var(--cor-destaque);
+    margin-top: 15px;
+    display: block; /* Para garantir que o preço fique em sua própria linha */
+    text-align: right;
+}
+
+/* --- SEÇÃO: GALERIA --- */
+.section-gallery {
+    padding: 80px 0;
+    background-color: var(--cor-fundo-claro);
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 250px; /* Altura fixa para as imagens da galeria */
+    object-fit: cover; /* Recorta a imagem para preencher o espaço */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* --- SEÇÃO: CONTATO E RESERVAS --- */
+.section-contact {
+    padding: 80px 0;
+    background-color: var(--cor-secundaria); /* Fundo Marrom Café Médio */
+    color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.section-contact h2 {
+    color: var(--cor-texto-claro);
+}
+
+.contact-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.contact-info, .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-info h3, .contact-form h3 {
+    color: var(--cor-terciaria);
+    margin-top: 0;
+}
+
+.contact-info p, .contact-form p {
+    font-size: 1.05em;
+    color: var(--cor-texto-claro);
+}
+
+.map-placeholder {
+    margin-top: 30px;
+    overflow: hidden; /* Garante que o iframe não vaze */
+    border-radius: 8px;
+}
+
+.map-placeholder iframe {
+    display: block; /* Remove espaçamento extra do iframe */
+    border-radius: 8px;
+}
+
+/* Formulário */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form input[type="date"],
+.contact-form input[type="time"],
+.contact-form input[type="number"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--cor-texto-claro);
+    font-size: 1em;
+    box-sizing: border-box; /* Garante padding e borda inclusos na largura */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: 0 0 0 2px rgba(212, 140, 79, 0.5);
+}
+
+.contact-form .btn-primary {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: var(--cor-primaria); /* Marrom Café Escuro */
+    color: var(--cor-texto-claro);
+    padding: 40px 0;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: left;
+}
+
+.footer-brand, .footer-links, .footer-contact-footer {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-brand h3, .footer-links h4, .footer-contact-footer h4 {
+    color: var(--cor-terciaria);
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 8px;
+}
+
+.footer-links ul li a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: var(--cor-destaque);
+}
+
+.footer-contact-footer p {
+    margin-bottom: 8px;
+}
+
+#galeria {
+    display: none;
+}
